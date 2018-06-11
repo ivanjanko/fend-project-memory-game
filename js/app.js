@@ -2,7 +2,66 @@
  * Create a list that holds all of your cards
  */
 
+let cardList = document.querySelectorAll(".card");
+let cardsClassList = [];
+let openBlueCards = [];
+let timeOut = 1200;
+let moves = 0;
 
+// get all card clasess
+cardList.forEach(function(element) {cardsClassList.push(element.firstElementChild.className)});
+console.log(cardsClassList)
+
+// shufle cards classes
+var newCardsClassList = shuffle(cardsClassList);
+console.log(newCardsClassList)
+
+// assaign classes to card elements
+cardList.forEach(function(element, index) {
+    console.log(element.firstElementChild.className, index)
+    element.firstElementChild.className = newCardsClassList[index]
+});
+
+
+
+// add event listener to each card
+cardList.forEach(function(element) {
+    element.addEventListener("click", function() {
+
+        // if there are less then 2 blue cards
+        if (openBlueCards.length < 2) {
+
+            // flip card faceup = change calass
+            element.classList.add('open', 'show');
+
+            // add open card to openBlueCards list
+            openBlueCards.push(element);
+        }
+        // if there are two blue cards open
+        if (openBlueCards.length === 2) {
+            if (areCardsEqual()) {
+                forEachBlueCardSetClass("card match"); 
+            } else {
+                setTimeout(function () {forEachBlueCardSetClass("card")}, timeOut);                
+            }
+        }
+    });
+});
+
+function areCardsEqual() {
+    return openBlueCards[0].firstElementChild.className === openBlueCards[1].firstElementChild.className;
+};
+        
+function forEachBlueCardSetClass(str) {
+    for (card in openBlueCards) { openBlueCards[card].className = str }
+    openBlueCards = [];
+    updateMoves();
+};
+
+function updateMoves() {
+    moves++;
+    document.querySelector(".moves").innerHTML = moves;
+};
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
