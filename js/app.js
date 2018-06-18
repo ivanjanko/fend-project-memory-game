@@ -27,6 +27,7 @@ function gameStartAndReset() {
     matchedPairs = 0;
     stopTimer()
     
+    
 };
 
 function allMatched()  {
@@ -80,7 +81,7 @@ function addEventListener() {
 };
 
 function cardClicked(blueCard) {
-
+    openModal()
     // start the timer
     startTimer()
 
