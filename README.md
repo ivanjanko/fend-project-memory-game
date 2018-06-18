@@ -1,20 +1,20 @@
 # Memory Game Project
 
-## Table of Contents
-
-* [Instructions](#instructions)
-* [Contributing](#contributing)
-
-## Instructions
-
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Acknowledgements
+- Traversy Media
+"Create a Modal With HTML, CSS & JavaScript"
+<br>
+https://www.youtube.com/watch?v=6ophW7Ask_0
+<br><br>
+* Mike Bostock
+<br>
+"Fisher-Yates Shuffle"
+<br>
+https://bost.ocks.org/mike/shuffle/
+<br><br>
+* Gerard Cohen
+<br>
+"How to Disable Links"
+<br>
+https://css-tricks.com/how-to-disable-links/
+<br><br>
