@@ -1,7 +1,7 @@
 # Memory Game Project
 
 ## Acknowledgements
-- Traversy Media
+Traversy Media
 <br>
 "Create a Modal With HTML, CSS & JavaScript"
 <br>
