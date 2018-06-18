@@ -81,7 +81,7 @@ function addEventListener() {
 };
 
 function cardClicked(blueCard) {
-    openModal()
+    
     // start the timer
     startTimer()
 
