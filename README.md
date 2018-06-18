@@ -7,15 +7,15 @@ Traversy Media
 <br>
 https://www.youtube.com/watch?v=6ophW7Ask_0
 <br><br>
-* Mike Bostock
+Traversy Media
 <br>
-"Fisher-Yates Shuffle"
+"Create a Modal With HTML, CSS & JavaScript"
 <br>
-https://bost.ocks.org/mike/shuffle/
+https://www.youtube.com/watch?v=6ophW7Ask_0
 <br><br>
-* Gerard Cohen
+Traversy Media
 <br>
-"How to Disable Links"
+"Create a Modal With HTML, CSS & JavaScript"
 <br>
-https://css-tricks.com/how-to-disable-links/
+https://www.youtube.com/watch?v=6ophW7Ask_0
 <br><br>
