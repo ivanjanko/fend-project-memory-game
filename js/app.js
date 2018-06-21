@@ -6,7 +6,8 @@
 let cardsNodeList;
 let cardsClassArray;
 let openBlueCards = [];
-let timeOut = 1500;
+let timeOut = 600;
+let timeOutTwo = 900;
 let moves;
 let stars = document.querySelector(".stars");
 let fullStar = `<li><i class="fa fa-star"></i></li>`;
@@ -85,41 +86,41 @@ function cardClicked(faceUpCard) {
     // start the timer
     startTimer();
     
-    if (faceUpCard.classList.value !== "card open show" &&faceUpCard.classList.value !== "card match") {
-        
-        // if there are less then 2 blue cards
-        if (openBlueCards.length < 2) { 
-        
-            // flip card faceup = change calass
-            faceUpCard.classList.add('open', 'show');
-    
-            // add open card to openBlueCards list
-            openBlueCards.push(faceUpCard);
-        }
+    // if cards are not already flipped and there are 0 or 1 card flipped at this turn/move
+    if (faceUpCard.classList.value === "card" && openBlueCards.length < 2) {
+
+        // flip card faceup = change calass
+        faceUpCard.classList.add('open', 'show');
+
+        // add open card to openBlueCards list
+        openBlueCards.push(faceUpCard);
 
         // if there are two blue cards open
         if (openBlueCards.length === 2) {
-            
-            if (areCardsEqual()) {
-                toggleClass("card match", openBlueCards);
-                matchedPairs++;
-            } else {
-                miniTimer();
-            }
+            matchOrFlipCards();   
             updateMovesCount();
             updateStars();
+
+            //chek if the game is over
+            if (matchedPairs === 8) {
+                setTimeout(allMatched, timeOut);
+            }
         }
     } 
-
-    
-
-    if (matchedPairs === 8) {
-        allMatched();
-    }
 }
 
-function miniTimer() {
-    setTimeout(function () { toggleClass("card", openBlueCards); }, timeOut);   
+function matchOrFlipCards() {
+    if (areCardsEqual()) {
+        setTimeout(function () {
+            toggleClass("card match", openBlueCards);
+        }, timeOut);
+        matchedPairs++;
+    } else {
+        setTimeout(function () {
+            toggleClass("card", openBlueCards);
+        }, timeOutTwo);   
+        
+    }
 }
 
 function areCardsEqual() {
@@ -129,6 +130,7 @@ function areCardsEqual() {
 function toggleClass(str, cards) {
     for (let card in cards) { cards[card].className = str; }
     openBlueCards = [];
+    console.log(`${minutes} : ${seconds}`);
 }
 
 function updateMovesCount() {
